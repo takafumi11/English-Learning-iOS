@@ -12,8 +12,6 @@
 		83A2EC732A1F9947001AB535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2EC722A1F9947001AB535 /* Assets.xcassets */; };
 		83A2EC762A1F9947001AB535 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2EC752A1F9947001AB535 /* Preview Assets.xcassets */; };
 		83A2EC802A1F9947001AB535 /* English_Learning_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC7F2A1F9947001AB535 /* English_Learning_iOSTests.swift */; };
-		83A2EC8A2A1F9947001AB535 /* English_Learning_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC892A1F9947001AB535 /* English_Learning_iOSUITests.swift */; };
-		83A2EC8C2A1F9947001AB535 /* English_Learning_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC8B2A1F9947001AB535 /* English_Learning_iOSUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +40,6 @@
 		83A2EC7B2A1F9947001AB535 /* English-Learning-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "English-Learning-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A2EC7F2A1F9947001AB535 /* English_Learning_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSTests.swift; sourceTree = "<group>"; };
 		83A2EC852A1F9947001AB535 /* English-Learning-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "English-Learning-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		83A2EC892A1F9947001AB535 /* English_Learning_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSUITests.swift; sourceTree = "<group>"; };
-		83A2EC8B2A1F9947001AB535 /* English_Learning_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			children = (
 				83A2EC6D2A1F9947001AB535 /* English-Learning-iOS */,
 				83A2EC7E2A1F9947001AB535 /* English-Learning-iOSTests */,
-				83A2EC882A1F9947001AB535 /* English-Learning-iOSUITests */,
 				83A2EC6C2A1F9947001AB535 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,15 +111,6 @@
 				83A2EC7F2A1F9947001AB535 /* English_Learning_iOSTests.swift */,
 			);
 			path = "English-Learning-iOSTests";
-			sourceTree = "<group>";
-		};
-		83A2EC882A1F9947001AB535 /* English-Learning-iOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				83A2EC892A1F9947001AB535 /* English_Learning_iOSUITests.swift */,
-				83A2EC8B2A1F9947001AB535 /* English_Learning_iOSUITestsLaunchTests.swift */,
-			);
-			path = "English-Learning-iOSUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83A2EC8A2A1F9947001AB535 /* English_Learning_iOSUITests.swift in Sources */,
-				83A2EC8C2A1F9947001AB535 /* English_Learning_iOSUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
