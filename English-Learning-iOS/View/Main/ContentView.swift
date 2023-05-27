@@ -16,7 +16,7 @@ struct ContentView: View {
             CalenderCardView()
                 .padding(.horizontal, 16)
             
-            Spacer()
+            MyLearningView()
         }
     }
 }
