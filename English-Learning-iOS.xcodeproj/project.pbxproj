@@ -12,6 +12,8 @@
 		838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AF12A1FDC9900A7C914 /* Color.swift */; };
 		838CBE482A21F8FF0009DD1C /* MyLearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE472A21F8FF0009DD1C /* MyLearningViewModel.swift */; };
 		838CBE4B2A21F91C0009DD1C /* MyLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */; };
+		838CBE4E2A22322A0009DD1C /* LearningRecordCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE4D2A22322A0009DD1C /* LearningRecordCardViewModel.swift */; };
+		838CBE522A2232420009DD1C /* LearningRecordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE512A2232420009DD1C /* LearningRecordCardView.swift */; };
 		83A2EC6F2A1F9947001AB535 /* English_Learning_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */; };
 		83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC702A1F9947001AB535 /* ContentView.swift */; };
 		83A2EC732A1F9947001AB535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2EC722A1F9947001AB535 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		838B6AF12A1FDC9900A7C914 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		838CBE472A21F8FF0009DD1C /* MyLearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLearningViewModel.swift; sourceTree = "<group>"; };
 		838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLearningView.swift; sourceTree = "<group>"; };
+		838CBE4D2A22322A0009DD1C /* LearningRecordCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRecordCardViewModel.swift; sourceTree = "<group>"; };
+		838CBE512A2232420009DD1C /* LearningRecordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRecordCardView.swift; sourceTree = "<group>"; };
 		83A2EC6B2A1F9947001AB535 /* English-Learning-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English-Learning-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSApp.swift; sourceTree = "<group>"; };
 		83A2EC702A1F9947001AB535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		838B6AE32A1FDA6A00A7C914 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				838CBE4F2A22322D0009DD1C /* LearningRecordCard */,
 				838CBE492A21F9040009DD1C /* MyLearning */,
 				838B6AEB2A1FDB9400A7C914 /* Main */,
 				838B6AE82A1FDB8200A7C914 /* CalenderCard */,
@@ -97,6 +102,7 @@
 		838B6AE42A1FDA6D00A7C914 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				838CBE4C2A2232080009DD1C /* LearningRecordCard */,
 				838CBE462A21F8F10009DD1C /* MyLearning */,
 				838B6AEC2A1FDBAF00A7C914 /* CalenderCard */,
 			);
@@ -158,6 +164,22 @@
 				838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */,
 			);
 			path = MyLearning;
+			sourceTree = "<group>";
+		};
+		838CBE4C2A2232080009DD1C /* LearningRecordCard */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE4D2A22322A0009DD1C /* LearningRecordCardViewModel.swift */,
+			);
+			path = LearningRecordCard;
+			sourceTree = "<group>";
+		};
+		838CBE4F2A22322D0009DD1C /* LearningRecordCard */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE512A2232420009DD1C /* LearningRecordCardView.swift */,
+			);
+			path = LearningRecordCard;
 			sourceTree = "<group>";
 		};
 		83A2EC622A1F9947001AB535 = {
@@ -341,6 +363,8 @@
 				838CBE482A21F8FF0009DD1C /* MyLearningViewModel.swift in Sources */,
 				83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */,
 				838B6AEA2A1FDB9000A7C914 /* CalenderCardView.swift in Sources */,
+				838CBE4E2A22322A0009DD1C /* LearningRecordCardViewModel.swift in Sources */,
+				838CBE522A2232420009DD1C /* LearningRecordCardView.swift in Sources */,
 				838B6AEE2A1FDBBE00A7C914 /* CalenderCardViewModel.swift in Sources */,
 				838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */,
 				838CBE4B2A21F91C0009DD1C /* MyLearningView.swift in Sources */,
