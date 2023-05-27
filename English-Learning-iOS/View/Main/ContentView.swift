@@ -11,12 +11,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Color
+                .clear.frame(height: 50)
+            CalenderCardView()
+                .padding(.horizontal, 16)
+            
+            Spacer()
         }
-        .padding()
     }
 }
 

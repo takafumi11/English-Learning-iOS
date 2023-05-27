@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		838B6AEA2A1FDB9000A7C914 /* CalenderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AE92A1FDB9000A7C914 /* CalenderCardView.swift */; };
+		838B6AEE2A1FDBBE00A7C914 /* CalenderCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AED2A1FDBBE00A7C914 /* CalenderCardViewModel.swift */; };
+		838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AF12A1FDC9900A7C914 /* Color.swift */; };
 		83A2EC6F2A1F9947001AB535 /* English_Learning_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */; };
 		83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC702A1F9947001AB535 /* ContentView.swift */; };
 		83A2EC732A1F9947001AB535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2EC722A1F9947001AB535 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		838B6AE92A1FDB9000A7C914 /* CalenderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCardView.swift; sourceTree = "<group>"; };
+		838B6AED2A1FDBBE00A7C914 /* CalenderCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCardViewModel.swift; sourceTree = "<group>"; };
+		838B6AF12A1FDC9900A7C914 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		83A2EC6B2A1F9947001AB535 /* English-Learning-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English-Learning-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSApp.swift; sourceTree = "<group>"; };
 		83A2EC702A1F9947001AB535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,8 +83,8 @@
 		838B6AE32A1FDA6A00A7C914 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				83A2EC702A1F9947001AB535 /* ContentView.swift */,
-				83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */,
+				838B6AEB2A1FDB9400A7C914 /* Main */,
+				838B6AE82A1FDB8200A7C914 /* CalenderCard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -86,8 +92,50 @@
 		838B6AE42A1FDA6D00A7C914 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				838B6AEC2A1FDBAF00A7C914 /* CalenderCard */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		838B6AE82A1FDB8200A7C914 /* CalenderCard */ = {
+			isa = PBXGroup;
+			children = (
+				838B6AE92A1FDB9000A7C914 /* CalenderCardView.swift */,
+			);
+			path = CalenderCard;
+			sourceTree = "<group>";
+		};
+		838B6AEB2A1FDB9400A7C914 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */,
+				83A2EC702A1F9947001AB535 /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		838B6AEC2A1FDBAF00A7C914 /* CalenderCard */ = {
+			isa = PBXGroup;
+			children = (
+				838B6AED2A1FDBBE00A7C914 /* CalenderCardViewModel.swift */,
+			);
+			path = CalenderCard;
+			sourceTree = "<group>";
+		};
+		838B6AEF2A1FDC8600A7C914 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				838B6AF02A1FDC8C00A7C914 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		838B6AF02A1FDC8C00A7C914 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				838B6AF12A1FDC9900A7C914 /* Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		83A2EC622A1F9947001AB535 = {
@@ -112,6 +160,7 @@
 		83A2EC6D2A1F9947001AB535 /* English-Learning-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				838B6AEF2A1FDC8600A7C914 /* Common */,
 				838B6AE42A1FDA6D00A7C914 /* ViewModel */,
 				838B6AE32A1FDA6A00A7C914 /* View */,
 				838B6AE22A1FDA6400A7C914 /* Model */,
@@ -199,7 +248,7 @@
 		83A2EC632A1F9947001AB535 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
@@ -268,6 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */,
+				838B6AEA2A1FDB9000A7C914 /* CalenderCardView.swift in Sources */,
+				838B6AEE2A1FDBBE00A7C914 /* CalenderCardViewModel.swift in Sources */,
+				838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */,
 				83A2EC6F2A1F9947001AB535 /* English_Learning_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,11 +480,14 @@
 				DEVELOPMENT_TEAM = ZGDXHWSJZP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EngL;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,11 +512,14 @@
 				DEVELOPMENT_TEAM = ZGDXHWSJZP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EngL;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
