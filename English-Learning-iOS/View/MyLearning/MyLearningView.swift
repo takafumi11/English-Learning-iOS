@@ -85,31 +85,7 @@ struct LearningButtonView: View {
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $showModal) {
-            ModalView()
-        }
-    }
-}
-
-
-
-struct ModalView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(.black)
-                        .padding()
-                }
-            }
-            Spacer()
-            Text("This is a modal")
-            Spacer()
+            StopwatchView()
         }
     }
 }
