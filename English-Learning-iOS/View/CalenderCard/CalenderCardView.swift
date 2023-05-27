@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct CalenderCardView: View {
-    let viewModel = CalenderCardViewModel()
+    @StateObject var viewModel = CalenderCardViewModel()
     @State private var selectedButtonIndex: Int = 0
-    @State private var month: String = ""
-    @State private var year: String = ""
     
     // Define your button height here
     let buttonHeight: CGFloat = 100
@@ -20,12 +18,12 @@ struct CalenderCardView: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack(spacing: 5) {
-                Text(month)
+                Text(viewModel.month)
                     .foregroundColor(Color(hex: "333333"))
                     .font(.title2)
                     .fontWeight(.semibold)
                 
-                Text(year)
+                Text(viewModel.year)
                     .foregroundColor(Color(hex: "333333"))
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -36,14 +34,12 @@ struct CalenderCardView: View {
                 LazyHStack(spacing: 10) {
                     ForEach(0..<1000) { index in
                         let (day, weekday) = viewModel.getDayAndWeekday(after: index)
-                        let (tmpMonth, tmpYear) = viewModel.getMonthAndYear(after: index)
                         
                         ButtonView(dayText: day, weekdayText: weekday, isSelected: .constant(selectedButtonIndex == index))
                             .onTapGesture {
                                 if selectedButtonIndex != index {
                                     selectedButtonIndex = index
-                                    month = tmpMonth
-                                    year = tmpYear
+                                    viewModel.getMonthAndYear(after: index)
                                 }
                             }
                     }
@@ -52,9 +48,7 @@ struct CalenderCardView: View {
             .frame(height: buttonHeight+2)
         }
         .onAppear() {
-            let (tmpMonth, tmpYear) = viewModel.getMonthAndYear(after: 0)
-            month = tmpMonth
-            year = tmpYear
+            viewModel.getMonthAndYear(after: 0)
         }
         
     }
