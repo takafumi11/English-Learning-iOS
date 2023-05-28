@@ -85,8 +85,7 @@ struct LearningButtonView: View {
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $showModal) {
-//            StopwatchView()
-            TimeRecordView()
+            TimeRecordModalView()
         }
     }
 }
