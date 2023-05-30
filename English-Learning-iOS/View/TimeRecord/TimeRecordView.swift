@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TimeRecordView: View {
-    @StateObject var timeRecordVM = TimeRecordViewModel()
+    @EnvironmentObject var timeRecordVM: TimeRecordViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     

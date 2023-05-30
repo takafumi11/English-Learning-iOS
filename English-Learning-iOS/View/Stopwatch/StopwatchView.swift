@@ -9,31 +9,36 @@
 import SwiftUI
 
 struct StopwatchView: View {
-    @StateObject var viewModel = StopwatchViewModel()
+    @EnvironmentObject var viewModel: StopwatchViewModel
     
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            VStack {
-                timeDisplayView(timeDisplay: $viewModel.timeDisplay)
-                stopWatchButtonView
-            }
+        VStack {
+            timeDisplayView(timeDisplay: $viewModel.timeDisplay)
+            stopWatchButtonView
         }
     }
     
     var stopWatchButtonView: some View {
-        HStack {
+        HStack(spacing: 0) {
             Button(action: {
                 viewModel.reset()
             }) {
-                Text("Reset")
-                    .padding(20)  // Increase padding to make a bigger circle
-                    .background(Color.gray.opacity(0.3))
-                    .foregroundColor(.white)
-                    .font(.system(size: 10))
-                    .clipShape(Circle())  // Clip the button to a circular shape
+                ZStack {
+                    Circle()
+                        .stroke(Color.gray, lineWidth: 2)
+                        .frame(width: 80, height: 80)
+                    
+                    Circle()
+                        .foregroundColor(.gray)
+                        .frame(width: 75, height: 75)
+                    
+                    Text("Reset")
+                        .foregroundColor(.white)
+                        .font(.system(size: 16))
+                }
+                
             }
-            
+            Spacer()
             Button(action: {
                 if viewModel.isRunning {
                     viewModel.stop()
@@ -41,19 +46,28 @@ struct StopwatchView: View {
                     viewModel.start()
                 }
             }) {
-                Text(viewModel.isRunning ? "Stop" : "Start")
-                    .padding(20)
-                    .background(viewModel.isRunning ? Color.red : Color.green)
-                    .foregroundColor(.white)
-                    .font(.system(size: 10))
-                    .clipShape(Circle())
+                ZStack {
+                    Circle()
+                        .stroke(viewModel.isRunning ? Color.red : Color.green, lineWidth: 2)
+                        .frame(width: 80, height: 80)
+                    
+                    Circle()
+                        .foregroundColor(viewModel.isRunning ? Color.red : Color.green)
+                        .frame(width: 75, height: 75)
+                    
+                    Text(viewModel.isRunning ? "Stop" : "Start")
+                        .foregroundColor(.white)
+                        .font(.system(size: 16))
+                }
             }
         }
+        .frame(width: UIScreen.main.bounds.size.width*0.8)
     }
 }
 
 struct timeDisplayView: View {
     @Binding var timeDisplay: String
+    let diff: CGFloat = 200
     
     var body: some View {
         ZStack {
@@ -65,35 +79,26 @@ struct timeDisplayView: View {
             let indexEnd2 = timeDisplay.index(timeDisplay.startIndex, offsetBy: 6)
             let str3 = timeDisplay[indexStart2..<indexEnd2]
             let str4 = timeDisplay.suffix(2)
-            let diff: CGFloat = 160
             
-            HStack {
-                Text(str1)
-                    .font(.system(size: 60, weight: .light, design: .default))
-                    .foregroundColor(.white)
-                    .padding(.trailing, diff - 5)
-            }
+            Text(str1)
+                .font(.system(size: 80, weight: .light, design: .default))
+                .foregroundColor(.black)
+                .padding(.trailing, diff)
             
-            HStack {
-                Text(str2)
-                    .font(.system(size: 60, weight: .light, design: .default))
-                    .foregroundColor(.white)
-                    .frame(width: diff)
-            }
+            Text(str2)
+                .font(.system(size: 80, weight: .light, design: .default))
+                .foregroundColor(.black)
+                .frame(width: diff)
             
-            HStack {
-                Text(str3)
-                    .font(.system(size: 60, weight: .light, design: .default))
-                    .foregroundColor(.white)
-                    .padding(.leading, diff / 2)
-            }
+            Text(str3)
+                .font(.system(size: 80, weight: .light, design: .default))
+                .foregroundColor(.black)
+                .padding(.leading, diff / 2)
             
-            HStack {
-                Text(str4)
-                    .font(.system(size: 60, weight: .light, design: .default))
-                    .foregroundColor(.white)
-                    .padding(.leading, diff)
-            }
+            Text(str4)
+                .font(.system(size: 80, weight: .light, design: .default))
+                .foregroundColor(.black)
+                .padding(.leading, diff)
         }
     }
 }
@@ -103,20 +108,3 @@ struct LearningRecordCardView_Previews: PreviewProvider {
         StopwatchView()
     }
 }
-
-// TODO: It will be moved to another file later.
-//        VStack {
-//            HStack {
-//                Spacer()
-//                Button(action: {
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    Image(systemName: "xmark")
-//                        .foregroundColor(.black)
-//                        .padding()
-//                }
-//            }
-//            Spacer()
-//            Text("This is a modal")
-//            Spacer()
-//        }
