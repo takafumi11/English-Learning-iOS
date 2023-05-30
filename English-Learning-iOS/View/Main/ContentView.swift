@@ -11,15 +11,21 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var calenderViewModel = CalenderCardViewModel()
     var body: some View {
-        VStack {
-            Color
-                .clear.frame(height: 50)
-            CalenderCardView()
-                .environmentObject(calenderViewModel)
-                .padding(.horizontal, 16)
-            
-            MyLearningView()
-                .environmentObject(calenderViewModel)
+        ScrollView {
+            VStack {
+                Color
+                    .clear.frame(height: 50)
+                
+                CalenderCardView()
+                    .environmentObject(calenderViewModel)
+                    .padding(.horizontal, 16)
+                
+                Color
+                    .clear.frame(height: 20)
+                
+                MyLearningView()
+                    .environmentObject(calenderViewModel)
+            }
         }
     }
 }
