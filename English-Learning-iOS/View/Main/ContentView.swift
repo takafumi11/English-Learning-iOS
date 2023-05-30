@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var calenderViewModel = CalenderCardViewModel()
     var body: some View {
         VStack {
             Color
                 .clear.frame(height: 50)
             CalenderCardView()
+                .environmentObject(calenderViewModel)
                 .padding(.horizontal, 16)
             
             MyLearningView()
+                .environmentObject(calenderViewModel)
         }
     }
 }

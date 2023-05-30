@@ -11,6 +11,7 @@ import Foundation
 class CalenderCardViewModel: ObservableObject {
     @Published var month: String = ""
     @Published var year: String = ""
+    @Published var selectedDate: String = ""
     
     func getDayAndWeekday(after days: Int) -> (day: String, weekday: String) {
         let date = Calendar.current.date(byAdding: .day, value: days, to: Date())!
@@ -38,5 +39,16 @@ class CalenderCardViewModel: ObservableObject {
         
         self.month = month
         self.year = year
+        
+        self.selectedDate = getSelecteDate(date: date)
+    }
+    
+    func getSelecteDate(date: Date) -> String {
+        let tmpDate = date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateString = formatter.string(from: tmpDate)
+        
+        return dateString
     }
 }

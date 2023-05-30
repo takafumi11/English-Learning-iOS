@@ -152,6 +152,7 @@ struct RecordButton: View {
                 break
             }
         }
+        .buttonStyle(.borderedProminent)
         .alert(isPresented: $showAlert) {
             switch selectedAlertType {
             case .close(let message):

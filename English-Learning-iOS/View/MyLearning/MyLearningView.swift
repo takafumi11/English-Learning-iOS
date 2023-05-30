@@ -9,6 +9,7 @@
 import SwiftUI
 struct ButtonData: Identifiable {
     var id: Int
+    var date: String
     var imageName: String
     var buttonText: String
     var progress: CGFloat
@@ -18,6 +19,7 @@ struct ButtonData: Identifiable {
 struct MyLearningView: View {
     @State private var showModal = false
     @StateObject private var viewModel = MyLearningViewModel()
+    @EnvironmentObject var calenderViewModel: CalenderCardViewModel
     
     var body: some View {
         VStack {
@@ -31,11 +33,13 @@ struct MyLearningView: View {
             }
             .padding(.horizontal, 16)
             
-            ForEach(viewModel.buttonDataArray) { buttonData in
+            // 選択した日付のデータを取得。
+            let filteredDatra = viewModel.buttonDataArray.filter{ $0.date == calenderViewModel.selectedDate }
+            
+            ForEach(filteredDatra) { buttonData in
                 LearningButtonView(showModal: $showModal, buttonData: buttonData)
             }
         }
-        
     }
 }
 

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CalenderCardView: View {
-    @StateObject var viewModel = CalenderCardViewModel()
+    @EnvironmentObject var viewModel: CalenderCardViewModel
     @State private var selectedButtonIndex: Int = 0
     
     // Define your button height here
