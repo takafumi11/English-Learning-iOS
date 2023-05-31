@@ -11,11 +11,13 @@ import SwiftUI
 struct TimeRecordModalView: View {
     @StateObject var stopwatchViewModel = StopwatchViewModel()
     @StateObject var timeRecordViewModel = TimeRecordViewModel()
+    @StateObject var myLearningViewModel = MyLearningViewModel()
     
     @State private var selectedTab = 0
     let learningTitle: String
     let learningIcon: String
     @Environment(\.presentationMode) var presentationMode
+    @State var id: Int
     
     var body: some View {
         NavigationView {
@@ -36,26 +38,29 @@ struct TimeRecordModalView: View {
                         HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
                         StopwatchView()
                             .environmentObject(stopwatchViewModel)
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
+                            .environmentObject(myLearningViewModel)
                     }
                 case 1:
                     VStack(spacing: 50) {
                         HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
                         TimeRecordView()
                             .environmentObject(timeRecordViewModel)
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
+                            .environmentObject(myLearningViewModel)
                     }
                 default:
                     VStack(spacing: 50) {
                         HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
                         StopwatchView()
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
+                            .environmentObject(myLearningViewModel)
                     }
                 }
                 
@@ -107,9 +112,11 @@ struct RecordButton: View {
     @State private var showAlert = false
     @EnvironmentObject var stopwatchViewModel: StopwatchViewModel
     @EnvironmentObject var timeRecordViewModel: TimeRecordViewModel
+    @EnvironmentObject var myLearningViewModel: MyLearningViewModel
     
     @Binding var selectedTab: Int
     @Binding var presentationMode: PresentationMode
+    @Binding var id: Int
     
     var body: some View {
         Button("Record my learning") {
@@ -129,8 +136,12 @@ struct RecordButton: View {
                     let remainingMinutes = minutes % 60
                     let intSeconds = Int(seconds)
                     print("Elapsed time: \(hours) hours, \(remainingMinutes) minutes and \(intSeconds) seconds")
+                    
+                    myLearningViewModel.minute = Double(minutes)
+                    myLearningViewModel.second = seconds
+                    
                     showAlert = true
-                    selectedAlertType = .select("Is it ok to record your learning?")
+                    selectedAlertType = .select("Is it ok to record your learning?\n\(myLearningViewModel.minute)m \(myLearningViewModel.second)s")
                 }
             case 1:
                 // Retrieve the start time and end time here
@@ -141,12 +152,14 @@ struct RecordButton: View {
                     selectedAlertType = .close("The end time is earlier than the start time. Please check the times.")
                 } else {
                     let elapsedTime = endTime.timeIntervalSince(startTime)
-                    let hours = Int(elapsedTime) / 3600
                     let minutes = Int(elapsedTime) / 60 % 60
                     let seconds = Int(elapsedTime) % 60
-                    print("Elapsed time: \(hours) hours, \(minutes) minutes, \(seconds) seconds")
+                    print("Elapsed time: \(elapsedTime) elapsedTime, \(myLearningViewModel.minute) minutes, \(myLearningViewModel.second) seconds")
+                    myLearningViewModel.minute = Double(minutes)
+                    myLearningViewModel.second = Double(seconds)
+                    
                     showAlert = true
-                    selectedAlertType = .select("Is it ok to record your learning?")
+                    selectedAlertType = .select("Is it ok to record your learning?\n\(myLearningViewModel.minute)m \(myLearningViewModel.second)s")
                 }
             default:
                 break
@@ -167,6 +180,7 @@ struct RecordButton: View {
                     title: Text("Alert"),
                     message: Text(message),
                     primaryButton: .default(Text("Yes"), action: {
+                        myLearningViewModel.updateButtonDate(id: id)
                         $presentationMode.wrappedValue.dismiss()
                     }),
                     secondaryButton: .cancel(Text("No"))
@@ -179,6 +193,6 @@ struct RecordButton: View {
 
 struct TimeRecordModalView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeRecordModalView(learningTitle: "Listening", learningIcon: "listening")
+        TimeRecordModalView(learningTitle: "Listening", learningIcon: "listening", id: 0)
     }
 }

@@ -13,8 +13,9 @@ struct ButtonData: Identifiable {
     var imageName: String
     var buttonText: String
     var progress: CGFloat
+    var target: Double
+    var current: Double
 }
-
 
 struct MyLearningView: View {
     @State private var showModal = false
@@ -34,9 +35,10 @@ struct MyLearningView: View {
             .padding(.horizontal, 16)
             
             // 選択した日付のデータを取得。
-            let filteredDatra = viewModel.buttonDataArray.filter{ $0.date == calenderViewModel.selectedDate }
+            // TODO: progressをアップデートしてもここが反映されないので、確認するところから。
+            let filteredData = viewModel.buttonDataArray.filter{ $0.date == calenderViewModel.selectedDate }
             
-            ForEach(filteredDatra) { buttonData in
+            ForEach(filteredData) { buttonData in
                 LearningButtonView(showModal: $showModal, buttonData: buttonData)
             }
         }
@@ -91,7 +93,8 @@ struct LearningButtonView: View {
         .sheet(isPresented: $showModal) {
             TimeRecordModalView(
             learningTitle: buttonData.buttonText,
-            learningIcon: buttonData.imageName)
+            learningIcon: buttonData.imageName,
+            id: buttonData.id)
         }
     }
 }

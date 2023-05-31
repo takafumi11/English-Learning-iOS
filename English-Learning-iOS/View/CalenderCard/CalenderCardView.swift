@@ -45,7 +45,7 @@ struct CalenderCardView: View {
                     }
                 }
             }
-            .frame(height: buttonHeight+2)
+            .frame(height: buttonHeight + 2)
         }
         .onAppear() {
             viewModel.getMonthAndYear(after: 0)
