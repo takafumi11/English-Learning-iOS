@@ -23,8 +23,6 @@ class MyLearningViewModel: ObservableObject {
         static let mock6 = ButtonData(id: 9, date: "2023-06-05", imageName: "listening", buttonText: "瞬間英af作文", progress: 0.1, target: 100, current: 10)
     }
     
-
-    
     let mockButtonData: [ButtonData] = [
         BData.mock1,
         BData.mock2,
@@ -54,5 +52,4 @@ class MyLearningViewModel: ObservableObject {
             self.buttonDataArray = self.mockButtonData
         }
     }
-    
 }

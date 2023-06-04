@@ -75,6 +75,26 @@ struct LearningButtonView: View {
                             }
                         }
                 }
+                .overlay(
+                    VStack {
+                        HStack {
+                            Spacer()
+                            HStack(spacing: 0) {
+                                Text("Target:")
+                                    .font(.caption)
+                                
+                                Text(String(Int(buttonData.target)))
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                
+                                Text("m")
+                                    .font(.caption)
+                            }
+                            .padding(.top, 10)
+                        }
+                        Spacer()
+                    }
+                )
                 
                 Spacer()
             }
@@ -83,13 +103,14 @@ struct LearningButtonView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.black, lineWidth: 1)
             )
-            .overlay(content: {
+            //  TODO: brach作成して、fix UIみたいな感じでコミットする。
+            .overlay(
                 HStack {
                     Spacer()
                     Image(systemName: "chevron.right")
                         .padding(.trailing, 20)
                 }
-            })
+            )
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $showModal) {
@@ -109,7 +130,8 @@ struct ProgressBarView: View {
                 .frame(width: UIScreen.main.bounds.width * 0.6, height: 10)
             
             Rectangle()
-                .foregroundColor(.blue)
+            // TODO: 色は考える。
+                .foregroundColor(progress == 1.0 ? .purple : .blue)
                 .frame(width: progress * (UIScreen.main.bounds.width * 0.6), height: 10)
         }
         .cornerRadius(15)
