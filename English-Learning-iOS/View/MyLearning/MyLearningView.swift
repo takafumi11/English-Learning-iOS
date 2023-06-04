@@ -31,18 +31,25 @@ struct MyLearningView: View {
             
             ForEach(filteredData) { buttonData in
                 LearningButtonView(showModal: $showModal, buttonData: buttonData)
+                    .environmentObject(viewModel)
             }
+        }
+        .onAppear {
+            viewModel.fetchButtonData()
         }
     }
 }
 
 struct LearningButtonView: View {
     @Binding var showModal: Bool
-    @State private var progress: CGFloat = 0
-    var buttonData: ButtonData
+    @State private var progress: Double = 0
+    @ObservedObject var buttonData: ButtonData
+    @EnvironmentObject var viewModel: MyLearningViewModel
+    
     
     var body: some View {
         Button(action: {
+            viewModel.selectedButtonData = buttonData
             showModal = true
         }) {
             HStack(spacing: 10) {
@@ -58,9 +65,13 @@ struct LearningButtonView: View {
                         .fixedSize(horizontal: true, vertical: false)
                     
                     ProgressBarView(progress: $progress)
-                        .onAppear {
+                        .onReceive(buttonData.$progress) { tmpProgress in
                             withAnimation(.easeInOut(duration: 1.0)) {
-                                progress = buttonData.progress
+                                if tmpProgress > 1.0 {
+                                    progress = 1.0
+                                } else {
+                                    progress = tmpProgress
+                                }
                             }
                         }
                 }
@@ -82,16 +93,14 @@ struct LearningButtonView: View {
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $showModal) {
-            TimeRecordModalView(
-            learningTitle: buttonData.buttonText,
-            learningIcon: buttonData.imageName,
-            id: buttonData.id)
+            TimeRecordModalView()
+                .environmentObject(viewModel)
         }
     }
 }
 
 struct ProgressBarView: View {
-    @Binding var progress: CGFloat
+    @Binding var progress: Double
     
     var body: some View {
         ZStack(alignment: .leading) {

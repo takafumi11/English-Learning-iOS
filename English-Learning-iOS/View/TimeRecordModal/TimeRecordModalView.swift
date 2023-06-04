@@ -11,13 +11,11 @@ import SwiftUI
 struct TimeRecordModalView: View {
     @StateObject var stopwatchViewModel = StopwatchViewModel()
     @StateObject var timeRecordViewModel = TimeRecordViewModel()
-    @StateObject var myLearningViewModel = MyLearningViewModel()
+    @EnvironmentObject var myLearningViewModel: MyLearningViewModel
     
     @State private var selectedTab = 0
-    let learningTitle: String
-    let learningIcon: String
+    
     @Environment(\.presentationMode) var presentationMode
-    @State var id: Int
     
     var body: some View {
         NavigationView {
@@ -25,39 +23,38 @@ struct TimeRecordModalView: View {
                 Picker("Tabs", selection: $selectedTab) {
                     Text("Stop Watch").tag(0)
                     Text("Manual").tag(1)
-                        .onAppear() {
-                            print("fnadkf", type(of: learningIcon))
-                            print("fnaadkf", type(of: presentationMode))
-                        }
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 
                 switch selectedTab {
                 case 0:
                     VStack(spacing: 50) {
-                        HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
+                        HeaderView()
+                            .environmentObject(myLearningViewModel)
                         StopwatchView()
                             .environmentObject(stopwatchViewModel)
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
                             .environmentObject(myLearningViewModel)
                     }
                 case 1:
                     VStack(spacing: 50) {
-                        HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
+                        HeaderView()
+                            .environmentObject(myLearningViewModel)
                         TimeRecordView()
                             .environmentObject(timeRecordViewModel)
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
                             .environmentObject(myLearningViewModel)
                     }
                 default:
                     VStack(spacing: 50) {
-                        HeaderView(learningIcon: learningIcon, learningTitle: learningTitle)
+                        HeaderView()
+                            .environmentObject(myLearningViewModel)
                         StopwatchView()
-                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode, id: $id)
+                        RecordButton(selectedTab: $selectedTab, presentationMode: presentationMode)
                             .environmentObject(stopwatchViewModel)
                             .environmentObject(timeRecordViewModel)
                             .environmentObject(myLearningViewModel)
@@ -82,17 +79,15 @@ struct TimeRecordModalView: View {
 
 
 struct HeaderView: View {
-    let learningIcon: String
-    let learningTitle: String
-    
+    @EnvironmentObject var meLearningViewModel: MyLearningViewModel
     var body: some View {
         HStack(spacing: 10) {
-            Image(learningIcon)
+            Image(meLearningViewModel.selectedButtonData.imageName)
                 .renderingMode(.template)
                 .resizable()
                 .frame(width: 50, height: 50)
             
-            Text(learningTitle)
+            Text(meLearningViewModel.selectedButtonData.buttonText)
                 .font(.title)
                 .fontWeight(.semibold)
                 .fixedSize(horizontal: true, vertical: false)
@@ -116,7 +111,7 @@ struct RecordButton: View {
     
     @Binding var selectedTab: Int
     @Binding var presentationMode: PresentationMode
-    @Binding var id: Int
+//    @Binding var id: Int
     
     var body: some View {
         Button("Record my learning") {
@@ -180,7 +175,7 @@ struct RecordButton: View {
                     title: Text("Alert"),
                     message: Text(message),
                     primaryButton: .default(Text("Yes"), action: {
-                        myLearningViewModel.updateButtonDate(id: id)
+                        myLearningViewModel.updateButtonDate()
                         $presentationMode.wrappedValue.dismiss()
                     }),
                     secondaryButton: .cancel(Text("No"))
@@ -193,6 +188,6 @@ struct RecordButton: View {
 
 struct TimeRecordModalView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeRecordModalView(learningTitle: "Listening", learningIcon: "listening", id: 0)
+        TimeRecordModalView()
     }
 }
