@@ -7,15 +7,6 @@
 //
 
 import SwiftUI
-struct ButtonData: Identifiable {
-    var id: Int
-    var date: String
-    var imageName: String
-    var buttonText: String
-    var progress: CGFloat
-    var target: Double
-    var current: Double
-}
 
 struct MyLearningView: View {
     @State private var showModal = false
