@@ -32,7 +32,7 @@ struct CalenderCardView: View {
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
-                    ForEach(0..<1000) { index in
+                    ForEach(0..<100) { index in
                         let (day, weekday) = viewModel.getDayAndWeekday(after: index)
                         
                         ButtonView(dayText: day, weekdayText: weekday, isSelected: .constant(selectedButtonIndex == index))

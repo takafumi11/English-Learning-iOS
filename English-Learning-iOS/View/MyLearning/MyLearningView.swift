@@ -56,8 +56,8 @@ struct LearningButtonView: View {
                 Image(buttonData.imageName)
                     .renderingMode(.template)
                     .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.leading, 20)
+                    .frame(width: 40, height: 40)
+                    .padding(.leading, buttonData.imageName == "listening" ? 15 : 20)
                 
                 VStack(alignment: .leading) {
                     Text(buttonData.buttonText)
@@ -80,15 +80,9 @@ struct LearningButtonView: View {
                         HStack {
                             Spacer()
                             HStack(spacing: 0) {
-                                Text("Target:")
-                                    .font(.caption)
-                                
-                                Text(String(Int(buttonData.target)))
+                                Text("\(String(Int(buttonData.current)))m/\(String(Int(buttonData.target)))m")
                                     .font(.caption)
                                     .fontWeight(.bold)
-                                
-                                Text("m")
-                                    .font(.caption)
                             }
                             .padding(.top, 10)
                         }

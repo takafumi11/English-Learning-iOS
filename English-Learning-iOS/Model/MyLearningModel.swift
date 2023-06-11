@@ -16,8 +16,9 @@ class ButtonData: Identifiable, ObservableObject {
     @Published var progress: Double
     var target: Double
     var current: Double
+    var skillID: Int
 
-    init(id: Int, date: String, imageName: String, buttonText: String, progress: Double, target: Double, current: Double) {
+    init(id: Int, date: String, imageName: String, buttonText: String, progress: Double, target: Double, current: Double, skillID: Int) {
         self.id = id
         self.date = date
         self.imageName = imageName
@@ -25,5 +26,6 @@ class ButtonData: Identifiable, ObservableObject {
         self.progress = progress
         self.target = target
         self.current = current
+        self.skillID = skillID
     }
 }
