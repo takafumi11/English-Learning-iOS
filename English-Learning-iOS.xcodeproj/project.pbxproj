@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83765C822A27B84000883E8A /* MyLearningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83765C812A27B84000883E8A /* MyLearningModel.swift */; };
 		838B6AEA2A1FDB9000A7C914 /* CalenderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AE92A1FDB9000A7C914 /* CalenderCardView.swift */; };
 		838B6AEE2A1FDBBE00A7C914 /* CalenderCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AED2A1FDBBE00A7C914 /* CalenderCardViewModel.swift */; };
 		838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838B6AF12A1FDC9900A7C914 /* Color.swift */; };
+		838CBE482A21F8FF0009DD1C /* MyLearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE472A21F8FF0009DD1C /* MyLearningViewModel.swift */; };
+		838CBE4B2A21F91C0009DD1C /* MyLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */; };
+		838CBE4E2A22322A0009DD1C /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE4D2A22322A0009DD1C /* StopwatchViewModel.swift */; };
+		838CBE522A2232420009DD1C /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE512A2232420009DD1C /* StopwatchView.swift */; };
+		838CBE552A2249FB0009DD1C /* TimeRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE542A2249FB0009DD1C /* TimeRecordViewModel.swift */; };
+		838CBE582A224A050009DD1C /* TimeRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE572A224A050009DD1C /* TimeRecordView.swift */; };
+		838CBE5B2A23560E0009DD1C /* TimeRecordModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE5A2A23560E0009DD1C /* TimeRecordModalViewModel.swift */; };
+		838CBE5E2A2356190009DD1C /* TimeRecordModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CBE5D2A2356190009DD1C /* TimeRecordModalView.swift */; };
+		83A2D35B2A29CEF2003F49FB /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2D35A2A29CEF2003F49FB /* ContentViewModel.swift */; };
 		83A2EC6F2A1F9947001AB535 /* English_Learning_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */; };
 		83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2EC702A1F9947001AB535 /* ContentView.swift */; };
 		83A2EC732A1F9947001AB535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2EC722A1F9947001AB535 /* Assets.xcassets */; };
@@ -35,9 +45,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83765C812A27B84000883E8A /* MyLearningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLearningModel.swift; sourceTree = "<group>"; };
 		838B6AE92A1FDB9000A7C914 /* CalenderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCardView.swift; sourceTree = "<group>"; };
 		838B6AED2A1FDBBE00A7C914 /* CalenderCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCardViewModel.swift; sourceTree = "<group>"; };
 		838B6AF12A1FDC9900A7C914 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		838CBE472A21F8FF0009DD1C /* MyLearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLearningViewModel.swift; sourceTree = "<group>"; };
+		838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLearningView.swift; sourceTree = "<group>"; };
+		838CBE4D2A22322A0009DD1C /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
+		838CBE512A2232420009DD1C /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
+		838CBE542A2249FB0009DD1C /* TimeRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordViewModel.swift; sourceTree = "<group>"; };
+		838CBE572A224A050009DD1C /* TimeRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordView.swift; sourceTree = "<group>"; };
+		838CBE5A2A23560E0009DD1C /* TimeRecordModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordModalViewModel.swift; sourceTree = "<group>"; };
+		838CBE5D2A2356190009DD1C /* TimeRecordModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordModalView.swift; sourceTree = "<group>"; };
+		83A2D3582A29C64B003F49FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		83A2D35A2A29CEF2003F49FB /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		83A2EC6B2A1F9947001AB535 /* English-Learning-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English-Learning-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A2EC6E2A1F9947001AB535 /* English_Learning_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Learning_iOSApp.swift; sourceTree = "<group>"; };
 		83A2EC702A1F9947001AB535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +97,7 @@
 		838B6AE22A1FDA6400A7C914 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83765C812A27B84000883E8A /* MyLearningModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +105,10 @@
 		838B6AE32A1FDA6A00A7C914 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				838CBE5C2A2356110009DD1C /* TimeRecordModal */,
+				838CBE562A2249FE0009DD1C /* TimeRecord */,
+				838CBE4F2A22322D0009DD1C /* Stopwatch */,
+				838CBE492A21F9040009DD1C /* MyLearning */,
 				838B6AEB2A1FDB9400A7C914 /* Main */,
 				838B6AE82A1FDB8200A7C914 /* CalenderCard */,
 			);
@@ -92,6 +118,11 @@
 		838B6AE42A1FDA6D00A7C914 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				83A2D3592A29CEE8003F49FB /* Main */,
+				838CBE592A2356010009DD1C /* TimeRecordModal */,
+				838CBE532A2249ED0009DD1C /* TimeRecord */,
+				838CBE4C2A2232080009DD1C /* Stopwatch */,
+				838CBE462A21F8F10009DD1C /* MyLearning */,
 				838B6AEC2A1FDBAF00A7C914 /* CalenderCard */,
 			);
 			path = ViewModel;
@@ -138,6 +169,78 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		838CBE462A21F8F10009DD1C /* MyLearning */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE472A21F8FF0009DD1C /* MyLearningViewModel.swift */,
+			);
+			path = MyLearning;
+			sourceTree = "<group>";
+		};
+		838CBE492A21F9040009DD1C /* MyLearning */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE4A2A21F91C0009DD1C /* MyLearningView.swift */,
+			);
+			path = MyLearning;
+			sourceTree = "<group>";
+		};
+		838CBE4C2A2232080009DD1C /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE4D2A22322A0009DD1C /* StopwatchViewModel.swift */,
+			);
+			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		838CBE4F2A22322D0009DD1C /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE512A2232420009DD1C /* StopwatchView.swift */,
+			);
+			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		838CBE532A2249ED0009DD1C /* TimeRecord */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE542A2249FB0009DD1C /* TimeRecordViewModel.swift */,
+			);
+			path = TimeRecord;
+			sourceTree = "<group>";
+		};
+		838CBE562A2249FE0009DD1C /* TimeRecord */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE572A224A050009DD1C /* TimeRecordView.swift */,
+			);
+			path = TimeRecord;
+			sourceTree = "<group>";
+		};
+		838CBE592A2356010009DD1C /* TimeRecordModal */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE5A2A23560E0009DD1C /* TimeRecordModalViewModel.swift */,
+			);
+			path = TimeRecordModal;
+			sourceTree = "<group>";
+		};
+		838CBE5C2A2356110009DD1C /* TimeRecordModal */ = {
+			isa = PBXGroup;
+			children = (
+				838CBE5D2A2356190009DD1C /* TimeRecordModalView.swift */,
+			);
+			path = TimeRecordModal;
+			sourceTree = "<group>";
+		};
+		83A2D3592A29CEE8003F49FB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				83A2D35A2A29CEF2003F49FB /* ContentViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		83A2EC622A1F9947001AB535 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +263,7 @@
 		83A2EC6D2A1F9947001AB535 /* English-Learning-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				83A2D3582A29C64B003F49FB /* Info.plist */,
 				838B6AEF2A1FDC8600A7C914 /* Common */,
 				838B6AE42A1FDA6D00A7C914 /* ViewModel */,
 				838B6AE32A1FDA6A00A7C914 /* View */,
@@ -316,11 +420,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838CBE482A21F8FF0009DD1C /* MyLearningViewModel.swift in Sources */,
 				83A2EC712A1F9947001AB535 /* ContentView.swift in Sources */,
 				838B6AEA2A1FDB9000A7C914 /* CalenderCardView.swift in Sources */,
+				83765C822A27B84000883E8A /* MyLearningModel.swift in Sources */,
+				838CBE4E2A22322A0009DD1C /* StopwatchViewModel.swift in Sources */,
+				838CBE5B2A23560E0009DD1C /* TimeRecordModalViewModel.swift in Sources */,
+				838CBE522A2232420009DD1C /* StopwatchView.swift in Sources */,
 				838B6AEE2A1FDBBE00A7C914 /* CalenderCardViewModel.swift in Sources */,
+				838CBE552A2249FB0009DD1C /* TimeRecordViewModel.swift in Sources */,
 				838B6AF22A1FDC9900A7C914 /* Color.swift in Sources */,
+				838CBE582A224A050009DD1C /* TimeRecordView.swift in Sources */,
+				838CBE5E2A2356190009DD1C /* TimeRecordModalView.swift in Sources */,
+				838CBE4B2A21F91C0009DD1C /* MyLearningView.swift in Sources */,
 				83A2EC6F2A1F9947001AB535 /* English_Learning_iOSApp.swift in Sources */,
+				83A2D35B2A29CEF2003F49FB /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +594,7 @@
 				DEVELOPMENT_TEAM = ZGDXHWSJZP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "English-Learning-iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = EngL;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -512,6 +627,7 @@
 				DEVELOPMENT_TEAM = ZGDXHWSJZP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "English-Learning-iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = EngL;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
